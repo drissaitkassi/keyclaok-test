@@ -7,8 +7,9 @@ import { PublicComponent } from './public/public.component';
 import { ProtectedComponent } from './protected/protected.component';
 import {RouterModule, Routes} from "@angular/router";
 import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
-import {AuthGuard} from "./guards/auth.guard";
+// import {AuthGuard} from "./guards/auth.guard";
 import {KeycloakSecurityService} from "./services/keycloak-security.service";
+import { RandomComponent } from './random/random.component';
 
 
 export function KeycloakFacto(keycloak: KeycloakSecurityService) {
@@ -20,14 +21,16 @@ export function KeycloakFacto(keycloak: KeycloakSecurityService) {
 // canActivate:[AuthGuard],data:{roles:['USER']}
 const appRoutes :Routes=[
   { path: '', component: PublicComponent },
-  { path: 'private', component: ProtectedComponent },
+  { path: 'private', component: ProtectedComponent},
+  { path: 'random', component: RandomComponent},
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     PublicComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    RandomComponent
   ],
   imports: [
     BrowserModule,

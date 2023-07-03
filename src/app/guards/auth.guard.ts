@@ -1,3 +1,4 @@
+/*
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from '@angular/router';
 import {KeycloakAuthGuard, KeycloakEventType, KeycloakService} from "keycloak-angular";
@@ -39,3 +40,4 @@ export class AuthGuard extends KeycloakAuthGuard {
   }
 
 }
+*/

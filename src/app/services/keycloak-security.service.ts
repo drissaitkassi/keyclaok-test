@@ -18,10 +18,13 @@ export class KeycloakSecurityService {
     this.kcInstance=new Keycloak({
       url: "http://localhost:8080/auth",
       realm: "demo",
-      clientId:"my-demo"
+      clientId:"my-demo",
+      "public-client":true
     })
     await this.kcInstance.init({
-      onLoad:"login-required"
+      onLoad:"login-required",
+
+
     })
     let loadUserProfile = await this.kcInstance.loadUserProfile();
     this.profile=loadUserProfile

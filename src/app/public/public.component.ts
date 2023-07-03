@@ -16,5 +16,7 @@ export class PublicComponent implements OnInit {
   }
 
 
-
+  logout() {
+    this.kcSec.kcInstance.logout()
+  }
 }
