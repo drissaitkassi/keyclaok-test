@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {KeycloakService} from "keycloak-angular";
-import {SecurityService} from "../services/security.service";
+
 
 @Component({
   selector: 'app-protected',
@@ -9,10 +8,10 @@ import {SecurityService} from "../services/security.service";
 })
 export class ProtectedComponent implements OnInit {
 
-  constructor(public secService:SecurityService) { }
+  constructor() { }
 
- async ngOnInit() {
-    await console.log(this.secService.profile?.username)
+ngOnInit() {
+
 
   }
 
