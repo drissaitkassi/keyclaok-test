@@ -10,6 +10,7 @@ import {KeycloakAngularModule, KeycloakService} from "keycloak-angular";
 // import {AuthGuard} from "./guards/auth.guard";
 import {KeycloakSecurityService} from "./services/keycloak-security.service";
 import { RandomComponent } from './random/random.component';
+import {MyGuardGuard} from "./guards/my-guard.guard";
 
 
 export function KeycloakFacto(keycloak: KeycloakSecurityService) {
@@ -21,7 +22,7 @@ export function KeycloakFacto(keycloak: KeycloakSecurityService) {
 // canActivate:[AuthGuard],data:{roles:['USER']}
 const appRoutes :Routes=[
   { path: '', component: PublicComponent },
-  { path: 'private', component: ProtectedComponent},
+  { path: 'private', component: ProtectedComponent,canActivate:[MyGuardGuard],data:{roles:['ADMIN']}},
   { path: 'random', component: RandomComponent},
 ]
 
