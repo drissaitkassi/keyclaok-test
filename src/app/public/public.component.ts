@@ -14,6 +14,7 @@ export class PublicComponent implements OnInit {
 
   ngOnInit(){
   console.log(this.kcSec.kcInstance.tokenParsed?.resource_access!["my-demo"].roles)
+    console.log(this.kcSec.kcInstance.token)
   }
 
 
